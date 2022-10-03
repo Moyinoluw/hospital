@@ -14,14 +14,15 @@ nav {
   width: 100%;
   /* position: fixed; */
 }
-label.logo {
+.logo {
   color: white;
-  font-size: 35px;
+  font-size: 40px;
   line-height: 80px;
-  padding: 0 100px;
+  padding: 10px 100px;
   font-weight: bold;
-  margin-left: 1em;
+  margin-left: 3em;
 }
+
 nav ul {
   float: right;
   margin-right: 20px;
@@ -43,19 +44,23 @@ a:hover {
   background: #1b9bff;
   transition: 0.5s;
 }
-.checkbtn {
-  font-size: 70px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
+.pee {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  transform: translate(-50%, -50%);
   cursor: pointer;
   display: none;
+  /* float: right; */
 }
-#check {
-  display: none;
+.def {
+  width: 35px;
+  height: 4px;
+  background: white;
+  margin: 4px 0;
+  /* display: none; */
 }
-@media (max-width: 952px) {
+@media  (max-width: 802px) {
   label.logo {
     font-size: 30px;
     padding-left: 50px;
@@ -65,7 +70,7 @@ a:hover {
   }
 }
 @media (max-width: 858px) {
-  .checkbtn {
+  .pee {
     display: block;
   }
   ul {
@@ -77,6 +82,7 @@ a:hover {
     left: -100%;
     text-align: center;
     transition: all 0.5s;
+    z-index: 1;
   }
   nav ul li {
     display: block;
@@ -91,12 +97,13 @@ a:hover {
     background: none;
     color: #0082e6;
   }
+
   #check:checked ~ ul {
     left: 0;
   }
 }
 .der-model {
-  background: #0082e6;
+  background: rgb(182, 186, 255);
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -114,16 +121,21 @@ a:hover {
 }
 .model-content {
   width: 540px;
-  max-width: 90%;
-  height: 400px;
-  background: rgb(255, 255, 255);
-  padding: 1em 2em;
+  max-width: 40%;
+  height: 350px;
+  background: rgb(56, 24, 197);
+  padding: 2em 2em;
   border-radius: 40px;
   text-align: center;
   position: relative;
   top: 70px;
-  
+
 }
+/* @media only screen and (min-width: 540px){
+  .model-content{
+    width: 500px
+  }
+} */
 label {
   margin-left: -140px;
 }
@@ -148,15 +160,16 @@ label {
   margin: 0 auto;
   text-align: center;
   font-size: 35px;
+  color: rgb(255, 255, 255);
 }
 .banner-area h2 {
   font-size: 40px;
   line-height: 50px;
-  color: #fff;
+  color: rgb(255, 255, 255);
 }
 .container {
   position: relative;
-  background: url(./Images/emergency.jpg) no-repeat center;
+  background: url(../Images/emergency.jpg) no-repeat center;
   height: 450px;
   overflow: hidden;
   /* margin-top: 08px; */
@@ -164,84 +177,133 @@ label {
 }
 .wrapper {
   position: relative;
-  background: url(./Images/need.jpg) no-repeat center;
-  height: 109px;
+  background: url(../Images/Emergency-Medicine.jpg) no-repeat center;
+  height: 209px;
   overflow: hidden;
   background-size: cover;
 }
+
 .we {
   font-weight: bold;
   font-size: 30px;
 }
-.kids {
-  /* text-align: center; */
-  font-size: 0;
-  /* padding: 10px 0 12px; */
-  color: #2470aa;
-}
-.kids .content {
-  width: 100%;
-  max-width: 300px;
-  display: inline-block;
-  vertical-align: top;
-  text-align: center;
-}
-.kids .padding {
-  padding: 15px;
-}
-.tr{
-  color: #0082e6;
-  position: relative;
-  padding-top: 40px;
-  padding-bottom: 30px;
-}
-form{
+form {
   margin: 10px;
   text-align: center;
 }
-label{
+.saw {
   display: block;
   font-size: 18px;
-  color:#0082e6;
+  color: #fff;
   /* margin-top:10px; */
   margin-left: -370px;
 }
-button{
-  display:block;
+button {
+  display: block;
   width: 80%;
   padding: 8px;
   border: none;
-  background: #0082e6;
+  background: #fff;
   /* color: #fff; */
   cursor: pointer;
   font-size: 18px;
 }
-button:hover{
-  color: #ffff;
+button:hover {
+  color: rgb(56, 24, 197);
 }
-input{
+input {
   display: block;
   width: 80%;
-  color:#2c3e50;
+  color: #03070a;
   border: none;
-  background: rgb(184, 214, 243);
+  background: rgb(203, 211, 218);
   padding: 4px;
   outline: none;
 }
 
-.leftside, .rightside{
+.leftside,
+.rightside {
   height: 50vh;
   width: 100%;
 }
 
-.leftside{
+.leftside {
   background: #1b9bff;
 }
-.rightside{
+.rightside {
   background: #fff;
 }
-@media screen and (min-width: 768px){
-  .leftside, .rightside{
+@media screen and (min-width: 768px) {
+  .leftside,
+  .rightside {
     height: 100vh;
   }
 }
+
+.purpose {
+  background: #187bc7;
+  width: 100%;
+  padding: 30px 0px;
+}
+.hel h2 {
+  color: white;
+  font-size: 75px;
+  width: 90%;
+  margin: 30px auto;
+  text-align: center;
+}
+.lux {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+  .lux{
+    display: block;
+    padding: 40px 50px;
+  }
+}
+.ear {
+  height: 365x;
+  width: 335px;
+  padding: 20px 35px;
+  background: #96d2ee;
+  border-radius: 20px;
+  margin: 15px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+img{
+  width: 80px;
+  height: 70px;
+}
+h3{
+  /* color: #fff; */
+  font-size: 23px;
+  margin: 15px;
+}
+.bar p{
+  font-size: 15px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+.ear .button{
+  background: #0d71bd;
+  color: white;
+  text-decoration: none;
+  border: 2px solid transparent;
+  font-weight: bold;
+  padding: 9px 20px;
+  border-radius: 30px;
+  transition: .4s;
+}
+ .button:hover{
+  background: transparent;
+  border: 2px solid #5d4eeb;
+  cursor: pointer;
+}
+
+
