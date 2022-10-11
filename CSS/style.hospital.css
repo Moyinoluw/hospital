@@ -148,7 +148,7 @@ label {
   /* transform: rotate(45deg); */
   cursor: pointer;
   text-decoration: none;
-  color: #0082e6;
+  color: rgb(255, 255, 255);
 }
 .close:hover{
   color: #2c3e50;
@@ -305,5 +305,81 @@ h3{
   border: 2px solid #5d4eeb;
   cursor: pointer;
 }
+.main{
+  position: absolute;
+  top: 200px;
+  left: 70px;
+}
+.dudu{
+  border: 3px ;
+  height: 40px;
+  width: 350px;
+  border-radius: 60px;
+  padding: 0px 10px;
+  color: rgb(119, 65, 219);
+  background: white;
+  font-size: 20px;
+}
 
+.main_1, .main_2, .man{
+  width: 500px;
+  margin: 30px auto;
+}
+
+.main_1 .main_2 .area{
+  position: relative;
+  width: 450px;
+  height: 40px;
+}
+
+.ved{
+  border-radius: 60px;
+  width: 350px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.ved:hover{
+  border: none;
+  background: #08406b;
+  color: white;
+}
+@media only screen and (max-width: 768px){
+  .leftside{
+    background: white;
+    color: #0d71bd;
+  }
+  .dudu{
+    background: #0d71bd;
+    color: #fff;
+  }
+  .dudu::placeholder{
+    color: aliceblue;
+  }
+  .ved:hover{
+  border: none;
+  background: #a9c8e0;
+  color: rgb(9, 15, 99);
+  }
+}
+.hes {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 70px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.hes:hover{
+  color: #2c3e50;
+}
+.leftside h1{
+  color:rgb(255, 255, 255);
+}
+.nor{
+  border:  solid #ffffff;
+  width: 100%;
+  height: 100%;
+}
 
