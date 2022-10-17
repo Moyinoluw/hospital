@@ -1,49 +1,21 @@
 const onSubmit = async () => {
-  let name = document.getElementById("uname").value;
-  let email = document.getElementById("email").value;
-  let pword = document.getElementById("pword").value;
+  let name = document.getElementById('uname').value;
+  let email = document.getElementById('email').value;
+  let pword = document.getElementById('pword').value;
 
   let arr = [];
-  arr.push({ uname: name, "email:": email, pword: pword });
-  window.localStorage.setItem("myObject", JSON.stringify(arr));
-  console.log("working", JSON.stringify(arr));
-  alert("Your details has been saved ");
-  window.location.replace("http://127.0.0.1:5501/Locator.html");
+  arr.push({ uname: name, 'email:': email, pword: pword });
+  window.localStorage.setItem('myObject', JSON.stringify(arr));
+  console.log('working', JSON.stringify(arr));
+  alert('Your details has been saved ');
+  window.location.replace('http://127.0.0.1:5501/Locator.html');
 };
-
-var tt = `<div class="mapouter">
-          <div class="gmap_canvas">
-            <iframe width="600" height="500" id="gmap_canvas"
-              src=https://maps.google.com/maps?q=6.683993,%203.331077&t=&z=13&ie=UTF8&iwloc=&output=embed"
-              frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-              href="https://123movies-to.org"></a><br>
-            <style>
-              .mapouter {
-                position: relative;
-                text-align: right;
-                height: 500px;
-                width: 600px;
-              }
-            </style><a href="https://www.embedgooglemap.net">add google maps</a>
-            <style>
-              .gmap_canvas {
-                overflow: hidden;
-                background: none !important;
-                height: 500px;
-                width: 600px;
-              }
-            </style>
-          </div>
-        </div>`;
-
-document.getElementById("map").innerHTML = tt;
-
 
 function getLocation() {
   if (navigator.geolocation) {
-   return navigator.geolocation.getCurrentPosition(showPosition);
+    return navigator.geolocation.getCurrentPosition(showPosition);
   } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
+    x.innerHTML = 'Geolocation is not supported by this browser.';
   }
 }
 
@@ -63,45 +35,71 @@ function showPosition(position) {
     longitude: position.coords.longitude,
   });
 
-    window.localStorage.setItem("myLocation", JSON.stringify(arr));
+  window.localStorage.setItem('myLocation', JSON.stringify(arr));
 }
 
 const onfecth = async () => {
+  getLocation();
 
-  getLocation()
-
-  var myLocation = JSON.parse(localStorage.getItem("myLocation"));
-  console.log(myLocation["0"].latitude);
+  var myLocation = JSON.parse(localStorage.getItem('myLocation'));
+  console.log(myLocation['0'].latitude);
   const menu = await fetch(
-    `http://134.209.218.152/api/v1/agents?longitude=3.321347246352115&latitude=6.685779889200000`,
+    `http://134.209.218.152/api/v1/agents?longitude=${myLocation['0'].longitude}&latitude=${myLocation['0'].latitude}`,
+
     {
-      method: "Get",
+      method: 'Get',
     }
   );
   const data = await menu.json();
   const res = data.data.agentsNearby;
   // console.log(data.data.agentsNearby);
-    var HTML = "";
-    count = 0;
+  count = 0;
+
+  var HTML = '<table border="3px" class="nor"> ';
+
+  HTML += ' <thead>';
+  HTML += '   <th>no</th>';
+  HTML += '  <th>name</th>';
+  HTML += '   <th>address</th>';
+  HTML += '  <th>city</th>';
+  HTML += '   <th>country</th>';
+  HTML += '   </thead>';
 
   for (let i = 0; i < res.length; i++) {
     count++;
-    console.log("Hostipal name", res[i].name);
-    HTML += "<tr>";
-            HTML += "<td align=center>" + count + "</td>";
+    var name = res[i].name
+    HTML += '<tr>';
+    HTML += `<td align=center  onclick="test(+name +)"> ${count}  </td>`;
 
-        HTML += "<td align=center>" + res[i].name + "</td>";
-        HTML += "<td align=center>" + res[i].address + "</td>";
-        HTML += "<td align=center>" + res[i].city + "</td>";
-        HTML += "<td align=center>" + res[i].country + "</td>";
-    HTML += "</tr>";
-
+    HTML += '<td align=center onclick="test()">' + res[i].name + '</td>';
+    HTML += '<td align=center onclick="test()">' + res[i].address + '</td>';
+    HTML += '<td align=center onclick="test()">' + res[i].city + '</td>';
+    HTML += '<td align=center onclick="test()">' + res[i].country + '</td>';
+    HTML += '</tr>';
   }
+  HTML += '</table>';
 
-    document.getElementById("ben").innerHTML = HTML;
-
-
-    
-
-
+  document.getElementById('ben').innerHTML = HTML;
 };
+
+const test = (count) => {
+console.log("tablle", count)
+}
+
+function initMap() {
+  // The location of Uluru
+
+  const uluru = { lat: 6.6857798892, lng: 3.321347246352115 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById('googleMap'), {
+    zoom: 20,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}
+
+window.initMap = initMap;

@@ -36,8 +36,10 @@
           <button type="submit" class="ved" onclick="onfecth()">Find</button>
         </div>
 
-        <div>
-          <table border="3px" class="nor">
+        <div id="ben">
+
+        
+          <!-- <table border="3px" class="nor">
             <thead>
               <th>no</th>
               <th>name</th>
@@ -47,7 +49,7 @@
             </thead>
             <tbody>
               <tr id="ben"></tr>
-              <!-- <tr>
+              <tr>
                         <td>fffff</td>
                         <td>fffff</td>
                         <td>fffff</td>
@@ -55,14 +57,16 @@
                         <td>fffff</td>
                     </tr> -->
             </tbody>
-          </table>
+          </table> 
         </div>
       </div>
     </div>
 
     <div class="col-md-6 no-gutters">
       <div class="rightside">
-        <div class="mapouter">
+
+        <div id="googleMap" style="width:100%;height:100%;"></div>
+        <!-- <div class="mapouter">
             <div class="gmap_canvas">
               <iframe
                 width="830"
@@ -92,14 +96,17 @@
                 }
               </style>
             </div>
-          </div>
+          </div> -->
 
         <div id="map"></div>
       </div>
     </div>
   </div>
   <script src="js/lol.js"></script>
-
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+  defer
+></script>
 </body>
 
 </html>
