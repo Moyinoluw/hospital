@@ -44,7 +44,7 @@ const onfecth = async () => {
   var myLocation = JSON.parse(localStorage.getItem('myLocation'));
   console.log(myLocation['0'].latitude);
   const menu = await fetch(
-    `http://134.209.218.152/api/v1/agents?longitude=${myLocation['0'].longitude}&latitude=${myLocation['0'].latitude}`,
+    `https://vbox.com.ng/api/v1/agents?longitude=${myLocation['0'].longitude}&latitude=${myLocation['0'].latitude}`,
 
     {
       method: 'Get',
